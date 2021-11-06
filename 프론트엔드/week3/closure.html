@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //closer : 함수 안에 함수 만들기
+        
+        // var global = "전역 변수";
+
+        // function printer(){
+        //     var local = "지역 변수";
+            
+        //     function printMessage() {
+        //         var closour = "클로저 변수";
+        //         console.log(global);
+        //         console.log(local);
+        //         console.log(closour);
+        //     }
+        //     return printMessage;
+        // }
+
+        // var testVar = printer();
+        // testVar();
+
+        // console.log(closour);
+        
+        function printer() {
+            var num = 0;
+            
+            //객체
+            return {
+                inc: function() {
+                    num +=1;
+                },
+                dec: function() {
+                    num -=1;
+                },
+                result: function(){
+                    return num;
+                }
+            };
+        }
+        var testPrint = printer();
+        testPrint.inc();
+        testPrint.inc();
+        console.log(testPrint.result());
+    </script>
+</body>
+</html>

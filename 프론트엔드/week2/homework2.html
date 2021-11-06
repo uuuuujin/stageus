@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <link rel="stylesheet" href="homework.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel"> //컴포넌트 정의
+        const PuzzleGame = () => {
+
+
+            const ArrCompare = () => {
+                const correctList = [1,2,3,4,5,6,7,8,''];
+                if(randomNumbers.toString()==correctList.toString()){
+                    document.getElementsByClassName('numberBtn').disabled = 'true';
+                    setMessage('정답입니다!')
+                    document.getElementById("startBtn").style.display = 'block';
+                } 
+            }
+
+            const [Message, setMessage] = React.useState("New Game을 눌러 게임을 시작하세요~");
+            const [randomNumbers, setRandomNumbers] = React.useState([]);
+            const [sideNumbers, setSideNumbers] = React.useState([]);
+            
+            React.useEffect(() => {
+                ArrCompare();
+            }, [randomNumbers]);
+            
+            const sideNumFn = () => {
+                let emptyCell;
+                for (var i=0; i<9; i++){
+                    if (randomNumbers[i]==""){
+                        emptyCell = i;
+                        break
+                    }
+                }
+                if (emptyCell==0){
+                    setSideNumbers([null, randomNumbers[3], null, randomNumbers[1]])
+                }else if (emptyCell==1){                                                            
+                    setSideNumbers([null, randomNumbers[4], randomNumbers[0], randomNumbers[2]])
+                }else if (emptyCell==2){
+                    setSideNumbers([null, randomNumbers[5], randomNumbers[1], null])
+                }else if (emptyCell==3){
+                    setSideNumbers([randomNumbers[0], randomNumbers[6], null, randomNumbers[4]])
+                }else if (emptyCell==4){
+                    setSideNumbers([randomNumbers[1], randomNumbers[7], randomNumbers[3], randomNumbers[5]])
+                }else if (emptyCell==5){
+                    setSideNumbers([randomNumbers[2], randomNumbers[8], randomNumbers[4], null])
+                }else if (emptyCell==6){
+                    setSideNumbers([randomNumbers[3], null, null, randomNumbers[7]])
+                }else if (emptyCell==7){
+                    setSideNumbers([randomNumbers[4], null, randomNumbers[6], randomNumbers[8]])
+                }else if (emptyCell==8){
+                    setSideNumbers([randomNumbers[5], null, randomNumbers[7], null])
+                }
+            }
+            
+            const GameStart = () => {
+                const SameNum = (n)  => {
+                    for (var j=0; j<numbers.length; j++) {
+                        if (n === numbers[j]) {
+                            return true;
+                        }
+                    }return false;
+                }
+
+                setMessage('');
+
+                var numbers = []; 
+                var i = 0;
+                while (i < 9) {
+                    var n = Math.ceil(Math.random() * 9);
+                    if (! SameNum(n)) {
+                        numbers.push(n);
+                        i++;
+                    }
+                }
+                for (var k=0; k<numbers.length; k++){
+                    if (numbers[k]===9){
+                        numbers[k] = '';
+                    }
+                }
+
+                var disorder;
+                const Disorder = () => {
+                    disorder = 0;
+                    for (var j=0; j<9; j++){
+                        if(numbers[j]===""){
+                            continue;
+                        }
+                        for (var k=j+1; k<9; k++){
+                            if (numbers[k]===""){
+                                continue;
+                            }else if (numbers[j] > numbers[k]){
+                                disorder++;
+                            }
+                        }
+                    }if (disorder % 2 != 0){
+                        return true;
+                    }
+                }
+                if (Disorder()){
+                    console.log(disorder);
+                    setMessage('게임을 다시 시작해주세요. Push the button again!');
+                    }else {
+                        setRandomNumbers(numbers);
+                        document.getElementById("startBtn").style.display = 'none';
+                }
+                
+                sideNumFn();
+                console.log(sideNumbers);
+            }
+
+            const NumberMove = (e) => {
+                const change = [...randomNumbers];
+                if (e.target.value =='6'){
+                    
+                }
+                setRandomNumbers(change);
+            }
+        
+
+            
+
+            
+        
+            const cells = randomNumbers.map((num, index) => (
+                <div className="cell" key={index}>
+                    <input id={index} className="numberBtn" type="button" value={num} onClick={NumberMove}/>
+                </div>
+            ))
+
+            return <React.Fragment>
+                <h1 className="msg">{Message}</h1>
+                <div className="board">
+                    <div className="wrap">
+                        {cells}
+                        <input id="startBtn" className="startBtn" type="button" value="New Game" onClick={GameStart}/>
+                    </div>
+                </div>
+                </React.Fragment>
+        }
+    
+    </script>
+    <script type="text/babel">
+        // 컴포넌트 랜더링
+        ReactDOM.render(<PuzzleGame/>,document.querySelector("#root"));
+    </script>
+</body>
+</html>

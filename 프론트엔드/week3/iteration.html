@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var numbers = [1,2,3,4,5,6,7,8,9,10];
+        // var add = 0;
+        // for (var i=0;i<10;i++){
+        //     var k = numbers[i]*numbers[i];
+        //     if (k <= 60){
+        //         console.log(k);
+        //         add += k;
+        //     }
+        // }
+        // console.log(add);
+
+        // map
+        var arr = [1,5,9,10];
+        var newArr = arr.map(function(value){
+            return value + 1
+        });
+        console.log(newArr);
+
+        // reduce
+        var arr = [1,5,9,10];
+        var newVar = arr.reduce(function(acc,value){
+            return acc + value;
+        }, 0);
+        console.log(newVar);
+
+
+        const SameNum = (n)  => {
+            for (var j=0; j<numbers.length; j++) {
+                if (n === numbers[j]) {
+                    return true;
+                }
+            }return false;
+        }
+
+        const SameNumm = (n) => {
+            numbers.foreach(function(value){
+                if (n === value) {
+                    return true;
+                }  
+            })
+            return false;
+        }
+
+        var numbers = []; 
+        var i = 0;
+        while (i < 16) {
+            var n = Math.floor(Math.random()*16) + 1;
+            if (! SameNum(n)) {
+                numbers.push(n);
+                i++;
+            }
+        }
+        for (var k=0; k<numbers.length; k++){
+            if (numbers[k]===16){
+                numbers[k] = '';
+            }
+        }
+        // filter
+        var arr = [1,5,9,10];
+        var newArr = arr.filter(function(value){
+            return value < 6;
+        });
+        console.log(newArr);
+
+        // forEach (map이랑 동일하나 return없음)
+        var arr = [1,5,9,10];
+        arr.forEach(function(value){
+            console.log(value);
+        });
+
+        //다시 구현 해보기
+        var numbers = [1,2,3,4,5,6,7,8,9,10];
+        var newArr = numbers.filter(function(value){
+            return value*value <= 60;
+        });
+        var numAdd = newArr.reduce(function(acc,value){
+            return acc + value;
+        }, 0);
+        console.log(newArr);
+        console.log(numAdd);
+        
+    </script>
+</body>
+</html>

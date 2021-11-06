@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel"> // 컴포넌트 정의 
+        
+
+        const PushButton = () => {
+            const [flag, setFlag] = React.useState(false);
+
+            const changeState = () => {
+                if (flag == false) {
+                    setFlag(true);
+                }else if (flag == true){
+                    setFlag(false);
+                }
+                
+            }
+
+            return <button type="submit" onClick={changeState}>
+                {flag == true ? "눌림":"누름"}
+                </button>
+        }
+
+        
+        
+    </script>
+    <script type="text/babel"> 
+    // 컴포넌트 랜더링
+        //최신 방식
+        ReactDOM.render(<PushButton/>, document.querySelector("#root"));
+    
+    </script>
+</body>
+</html>

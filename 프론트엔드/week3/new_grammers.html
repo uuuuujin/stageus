@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //rest parameter 가변인자
+        let test = function(a, ...b) {
+            console.log(a);
+            console.log(b);
+        }
+        test(1,2,3,4,5);
+
+
+        //spread Operator
+        let arr = [1,2,3];
+
+        // let sum = function(arr) {
+        //     return arr[0] + arr[1] + arr[2];
+        // }
+        // console.log(sum(arr));
+
+        let sum = function(a, b,c) {
+            return a + b + c
+        }
+        console.log(sum(...arr));
+
+        
+        // 함수에서 객체처럼,,?
+        let Test = function(value) {
+            let var1 = value.first;
+            let var2 = value.second;
+            console.log(value.result(var1, var2))
+        }
+
+        const Sum = function(a,b){
+            return a+b;
+        }
+        Test({first:0, second:1, result: Sum});
+
+
+        // ES5 for-in
+        let list = [1,3,5];
+        for (let a in list) {  //index 추출
+            console.log(list[a]);
+        }
+
+        // ES6 for-of
+        for (let a of list) {  //리스트 값 추출
+            console.log(a)
+        }
+
+        
+
+    </script>
+</body>
+</html>

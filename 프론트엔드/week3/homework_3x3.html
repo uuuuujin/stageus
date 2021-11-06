@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <link rel="stylesheet" href="homework.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel"> //컴포넌트 정의
+
+        // 버튼 하나짜리 컴포넌트 
+        const NumberBtn = (props) => {
+            return <React.Fragment>
+                <div className="cell" key={props.index}>
+                    <input id={props.index} className="numberBtn" type="button" value={props.num} onClick={props.move}/>
+                </div>
+                </React.Fragment>
+            }
+
+        
+        // 3X3 sliding puzzle 컴포넌트
+        const SlidingPuzzle_9 = () => {
+
+            const ArrCompare = () => {
+                const correctList = [1,2,3,4,5,6,7,8,''];
+                if(randomNumbers.toString()==correctList.toString()){
+                    document.getElementsByClassName('numberBtn').disabled = 'true';
+                    setMessage('정답입니다!')
+                    document.getElementById("startBtn").style.display = 'block';
+                } 
+            }
+
+            const [Message, setMessage] = React.useState("New Game을 눌러 게임을 시작하세요~");
+            const [randomNumbers, setRandomNumbers] = React.useState([]);
+            const change = [...randomNumbers];
+            
+            React.useEffect(() => {
+                ArrCompare();
+            }, [randomNumbers]);
+            
+            
+            const GameStart = () => {
+
+                const SameNum = (n)  => {
+                    for (var j=0; j<numbers.length; j++) {
+                        if (n === numbers[j]) {
+                            return true;
+                        }
+                    }return false;
+                }
+                setMessage('');
+
+                var numbers = []; 
+                var i = 0;
+                while (i < 9) {
+                    var n = Math.ceil(Math.random() * 9);
+                    if (! SameNum(n)) {
+                        numbers.push(n);
+                        i++;
+                    }
+                }
+                for (var k=0; k<numbers.length; k++){
+                    if (numbers[k]===9){
+                        numbers[k] = '';
+                    }
+                }
+
+                var disorder;
+                const Disorder = () => {
+                    disorder = 0;
+                    for (var j=0; j<9; j++){
+                        if(numbers[j]===""){
+                            continue;
+                        }
+                        for (var k=j+1; k<9; k++){
+                            if (numbers[k]===""){
+                                continue;
+                            }else if (numbers[j] > numbers[k]){
+                                disorder++;
+                            }
+                        }
+                    }if (disorder % 2 != 0){
+                        return true;
+                    }
+                }
+                if (Disorder()){
+                    console.log(disorder);
+                    setMessage('게임을 다시 시작해주세요. Push the button again!');
+                    }else {
+                        setRandomNumbers(numbers);
+                        document.getElementById("startBtn").style.display = 'none';
+                }
+            }
+
+
+            const NumberMove = (e) => {
+                if (e.target.value==randomNumbers[0]){
+                    if(randomNumbers[1]==""){
+                        change[1] = randomNumbers[0];
+                        change[0] = "";
+                    }else if(randomNumbers[3]==""){
+                        change[3] = randomNumbers[0];
+                        change[0] = "";
+                    }
+                }else if (e.target.value==randomNumbers[1]){
+                    if(randomNumbers[0]==""){
+                        change[0] = randomNumbers[1];
+                        change[1] = "";
+                    }else if(randomNumbers[2]==""){
+                        change[2] = randomNumbers[1];
+                        change[1] = "";
+                    }else if(randomNumbers[4]==""){
+                        change[4] = randomNumbers[1];
+                        change[1] = "";
+                    }
+                }else if (e.target.value==randomNumbers[2]){
+                    if(randomNumbers[1]==""){
+                        change[1] = randomNumbers[2];
+                        change[2] = "";
+                    }else if(randomNumbers[5]==""){
+                        change[5] = randomNumbers[2];
+                        change[2] = "";
+                    }
+                }else if (e.target.value==randomNumbers[3]){
+                    if(randomNumbers[0]==""){
+                        change[0] = randomNumbers[3];
+                        change[3] = "";
+                    }else if(randomNumbers[4]==""){
+                        change[4] = randomNumbers[3];
+                        change[3] = "";
+                    }else if(randomNumbers[6]==""){
+                        change[6] = randomNumbers[3];
+                        change[3] = "";
+                    }
+                }else if (e.target.value==randomNumbers[4]){
+                    if(randomNumbers[1]==""){
+                        change[1] = randomNumbers[4];
+                        change[4] = "";
+                    }else if(randomNumbers[3]==""){
+                        change[3] = randomNumbers[4];
+                        change[4] = "";
+                    }else if(randomNumbers[5]==""){
+                        change[5] = randomNumbers[4];
+                        change[4] = "";
+                    }else if(randomNumbers[7]==""){
+                        change[7] = randomNumbers[4];
+                        change[4] = "";
+                    }
+                }else if (e.target.value==randomNumbers[5]){
+                    if(randomNumbers[2]==""){
+                        change[2] = randomNumbers[5];
+                        change[5] = "";
+                    }else if(randomNumbers[4]==""){
+                        change[4] = randomNumbers[5];
+                        change[5] = "";
+                    }else if(randomNumbers[8]==""){
+                        change[8] = randomNumbers[5];
+                        change[5] = "";
+                    }
+                }else if (e.target.value==randomNumbers[6]){
+                    if(randomNumbers[3]==""){
+                        change[3] = randomNumbers[6];
+                        change[6] = "";
+                    }else if(randomNumbers[7]==""){
+                        change[7] = randomNumbers[6];
+                        change[6] = "";
+                    }
+                }else if (e.target.value==randomNumbers[7]){
+                    if(randomNumbers[4]==""){
+                        change[4] = randomNumbers[7];
+                        change[7] = "";
+                    }else if(randomNumbers[6]==""){
+                        change[6] = randomNumbers[7];
+                        change[7] = "";
+                    }else if(randomNumbers[8]==""){
+                        change[8] = randomNumbers[7];
+                        change[7] = "";
+                    }
+                }else if (e.target.value==randomNumbers[8]){
+                    if(randomNumbers[5]==""){
+                        change[5] = randomNumbers[8];
+                        change[8] = "";
+                    }else if(randomNumbers[7]==""){
+                        change[7] = randomNumbers[8];
+                        change[8] = "";
+                    }
+                }
+                setRandomNumbers(change);
+            }
+        
+
+            
+        
+            const cells = randomNumbers.map((num, index) => {
+                return <NumberBtn num={num} index={index} move={NumberMove}/>
+            })
+
+            return <React.Fragment>
+                <h1 className="msg">{Message}</h1>
+                <div className="board">
+                    <div className="wrap">
+                        {cells}
+                    </div>
+                    <input id="startBtn" className="startBtn" type="button" value="New Game" onClick={GameStart}/>
+                </div>
+                </React.Fragment>
+        }    
+    </script>
+    <script type="text/babel">
+        // 컴포넌트 랜더링
+        ReactDOM.render(<SlidingPuzzle_9/>,document.querySelector("#root"));
+    </script>
+</body>
+</html>

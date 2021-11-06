@@ -1,0 +1,57 @@
+#root {
+    text-align: center;
+}
+
+.msg {
+    font-size: 20px;
+    display: inline-block;
+    margin: 70px 0 ;
+}
+
+.board {
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+    height: 500px;
+    background-color: lightblue;
+}
+
+.wrap {
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    padding: 50px 50px 0 50px;
+    
+    position: relative;
+}
+
+.cell {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.numberBtn {
+    width: 100px;
+    height: 100px;
+    font-size: 35px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    border: 0.5px solid #ffffff;
+    outline: none;
+}
+
+.numberBtn:hover {
+    background-color: #e6e6e6;
+}
+
+.startBtn {
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin: 50px auto 0;
+    font-size: 20px;
+    border: 0 none;
+    outline: none;
+    cursor: pointer;
+}

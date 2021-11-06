@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #first {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+        #second {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+        #third {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <div id="first">
+        <div id="second">
+            <div id="third">
+
+            </div>
+        </div>
+    </div> -->
+
+    <table id="table">
+        <tr>
+            <td id="one">1</td>
+            <td id="two">2</td>
+            <td id='three'>3</td>
+        </tr>
+        <tr>
+            <td id='four'>4</td>
+            <td id='five'>5</td>
+            <td id='six'>6</td>
+        </tr>
+        <tr>
+            <td id='seven'>7</td>
+            <td id='eight'>8</td>
+            <td id='nine'>9</td>
+        </tr>
+    </table>
+
+    <script>
+        // document.getElementById("first").addEventListener("click",function(e){
+        //     console.log("1");
+        // }, true)
+        // document.getElementById("second").addEventListener("click",function(e){
+        //     console.log("2");
+        // }, true)
+        // document.getElementById("third").addEventListener("click",function(e){
+        //     console.log("3");
+        // }, true)
+
+        //부모 갖고옴 (장점 : 이벤트 하나로 압축시킴)
+        // document.body.addEventListener("click", function(e){
+        //     var dom = e.target;
+        //     switch(dom.id) {
+        //         case "first":
+        //             console.log("1");
+        //             break;
+        //         case "second":
+        //             console.log("2");
+        //             break;
+        //         case "third":
+        //             console.log("3");
+        //             break;
+        //     }
+        // })
+
+        //예제
+        // 1. 테이블 태그를 이용해서 간단하게 3X3 번호판 만들기
+        // 2. 각 번호를 누를 때 누른 번호가 출력되게 하기
+        // 3. 이벤트 델리게이션 사용하기
+        document.getElementById('table').addEventListener("click", function(e){
+            var num = e.target;
+            switch(num.id) {
+                case "one":
+                    console.log("1");
+                    break;
+                case "two":
+                    console.log("2");
+                    break;
+                case "three":
+                    console.log("3");
+                    break;
+                case "four":
+                    console.log("4");
+                    break;
+                case "five":
+                    console.log("5");
+                    break;
+                case "six":
+                    console.log("6");
+                    break;
+                case "seven":
+                    console.log("7");
+                    break;
+                case "eight":
+                    console.log("8");
+                    break;
+                case "nine":
+                    console.log("9");
+                    break;
+            }
+        })
+        
+    </script>
+</body>
+</html>

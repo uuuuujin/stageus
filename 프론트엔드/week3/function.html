@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 선언
+        let arr = [1,2,3];
+        sum();
+        //호이스팅 실행 O
+        function sum() {   //함수 선언식(declaratin)
+            return arr[0] + arr[1] + arr[2];
+        }
+
+        //호이스팅 실행 X
+        let sum = function() {  //함수 표현식(expression)
+            return arr[0] + arr[1] + arr[2];
+        }
+
+        let sum = () => { //함수 람다식
+            return arr[0] + arr[1] + arr[2];
+        }
+        
+    </script>
+</body>
+</html>

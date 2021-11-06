@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <link rel="stylesheet" href="../week1/homework.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel"> // 컴포넌트 정의 
+
+        const GuGuDan = () => {
+            const [first, setFirst] = React.useState(Math.ceil(Math.random() * 9));
+            const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
+            const [answer, setAnswer] = React.useState('');
+            const [result, setResult] = React.useState('');
+
+            const OnSubmit = () => {
+                if (answer === first*second) {
+                    setAnswer('');
+                    setResult("정답입니다!");
+                    setFirst(Math.ceil(Math.random() * 9));
+                    setSecond(Math.ceil(Math.random() * 9));
+                    
+                }else {
+                    setResult("오답입니다!");
+                    setAnswer('');
+                }
+            }
+
+            const OnChange = (e) => {
+                setAnswer(e.target.value);
+            }
+
+
+
+            return(
+                <React.Fragment>
+                    <div className="wrap">
+                        <div className="multiplication">
+                            <div className="number question">{first}</div>
+                            <span className="question"> X </span>
+                            <div className="number question">{second}</div>
+                            
+                        </div>
+                        <form onSubmit={OnSubmit}>
+                            <input type="text" value={answer} onChange={OnChange}/>
+                            <button type="submit">입력</button>
+                        </form>
+                        <div className="message">{result}</div>
+                    </div>
+                </React.Fragment>  
+            )          
+    }
+            
+    </script>  
+    <script type="text/babel"> 
+        // 컴포넌트 랜더링
+            ReactDOM.render(<GuGuDan/>, document.querySelector("#root"));
+        </script>
+</body>
+</html>

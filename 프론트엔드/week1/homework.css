@@ -1,0 +1,58 @@
+.wrap {
+    width: 300px;
+    position: relative;
+    margin: 120px auto;
+}
+
+.multiplication {
+    width: 300px;
+    margin: 0 auto 70px;
+}
+
+.question {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.number {
+    background-color: #d9d9d9;
+}
+
+form {
+    width: 300px;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+input {
+    border: 1px solid rgb(118,118,118);
+    height: 70px;
+    box-sizing: border-box;
+    font-size: 40px;
+    width: 200px;
+}
+
+button {
+    margin: 5px 0 0 30px;
+    height: 60px;
+    width: 60px;
+    border: 1px solid rgb(118,118,118);
+    border-radius: 3px;
+    outline: none;
+}
+
+button:hover {
+    background-color: #cccccc;
+    cursor: pointer;
+}
+
+.message {
+    width: 300px;
+    margin: 0 auto;
+    font-size: 50px;
+    text-align: center;
+}

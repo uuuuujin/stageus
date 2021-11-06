@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <link rel="stylesheet" href="sixteenPuzzle.css">
+    <title>4X4 sliding game</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // 버튼 하나짜리 컴포넌트 
+        const NumberBtn = (props) => {
+            return <React.Fragment>
+                <div className="cell" key={props.number}>
+                    <input id={props.idx} className="numberBtn" type="button" value={props.number} onClick={props.move}/>
+                </div>
+                </React.Fragment>
+        }
+
+
+        // 4X4 게임판 컴포넌트
+        const PuzzleGame = () => {
+            const [randomNumbers, setRandomNumbers] = React.useState([]);
+            const [message, setMessage] = React.useState("New Game을 눌러 게임을 시작하세요~");
+            const change = [...randomNumbers];
+
+
+            const ArrCompare = () => {
+                const correctList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,''];
+                if(randomNumbers.toString()==correctList.toString()){
+                    document.getElementsByClassName('numberBtn').disabled = 'true';
+                    setMessage('정답입니다!')
+                } 
+            }
+
+            React.useEffect(() => {
+                ArrCompare();
+            }, [randomNumbers]);
+
+            const GameStart = () => {
+                const SameNum = (n)  => {
+                    for (var j=0; j<numbers.length; j++) {
+                        if (n === numbers[j]) {
+                            return true;
+                        }
+                    }return false;
+                }
+
+                setMessage('');
+
+                const Disorder = () => {
+                    var disorder = 0;
+                    for (var j=0; j<16; j++){
+                        if(numbers[j]===""){
+                            continue;
+                        }
+                        for (var k=j+1; k<16; k++){
+                            if (numbers[k]===""){
+                                continue;
+                            }else if (numbers[j] > numbers[k]){
+                                disorder++;
+                            }
+                        }
+                    }if (disorder % 2 != 0){
+                        return true;
+                    }
+                }
+               
+                while (true) {
+                    var numbers = []; 
+                    var i = 0;
+                    while (i < 16) {
+                        var n = Math.floor(Math.random()*16) + 1;
+                        if (! SameNum(n)) {
+                            numbers.push(n);
+                            i++;
+                        }
+                    }
+
+                    for (var k=0; k<numbers.length; k++){
+                        if (numbers[k]===16){
+                            numbers[k] = '';
+                        }
+                    }
+
+                    if (! Disorder()){
+                        setRandomNumbers(numbers);
+                        document.getElementById("startBtn").style.display = 'none';
+                        break
+                    }
+                }
+            }
+
+            let blankCell;
+            let blankSide;
+            const SideNumbers = () => {
+                blankCell = change.indexOf(''); //빈 곳 위치 저장
+                blankSide = [blankCell-4,blankCell+4,blankCell-1,blankCell+1]; //빈칸 기준 상하좌우 인덱스 넣기
+                if(blankCell<4){
+                    blankSide[0] = -1;
+                }else if(blankCell>11){
+                    blankSide[1] = -1;
+                }else if (blankCell%4==0){
+                    blankSide[2] = -1;
+                }else if (blankCell%4==3){
+                    blankSide[3] = -1;
+                }
+            }
+
+            const NumberMove = (e) => {
+                if(e.target.className=='numberBtn'){
+                    SideNumbers();
+                    for (let a of blankSide){
+                        if (e.target.id==a) {
+                            change[blankCell] = e.target.value;
+                            change[a] ='';
+                            setRandomNumbers(change);
+                        }
+                    }
+                }
+            }
+
+            //document.getElementById('root').addEventListener("click", NumberMove);
+            
+            const cells = randomNumbers.map((num, index) => {
+                return <NumberBtn number={num} idx={index} move={NumberMove}/>
+            })
+
+            return <React.Fragment>
+                <h1 className="msg">{message}</h1>
+                <div className="board">
+                    <div className="wrap">
+                        {cells}
+                    </div>    
+                    <input id="startBtn" className="startBtn" type="button" value="New Game" onClick={GameStart}/>
+                </div>
+                </React.Fragment>
+        }
+    
+    
+    
+    </script>
+    <script type="text/babel">
+        // 컴포넌트 랜더링
+        ReactDOM.render(<PuzzleGame/>,document.querySelector("#root"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <link rel="stylesheet" href="homework.css">
+    <title>구구단</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- 컴포넌트 정의 -->
+    <script type="text/babel">
+        class MultiplicationTable extends React.Component{
+            constructor (props) {
+                super(props);
+                this.state = {
+                    firstNum : Math.ceil(Math.random() * 9),
+                    secondNum : Math.ceil(Math.random() * 9),
+                    answer: '',
+                    result: ''
+                }
+            }
+
+            onSubmit = (e) => {
+                e.preventDefault();
+                if (parseInt(this.state.answer) === this.state.firstNum * this.state.secondNum){
+                    this.setState({
+                      result: "정답입니다!",
+                      firstNum: Math.ceil(Math.random() * 9),
+                      secondNum: Math.ceil(Math.random() * 9),
+                      answer: '',  
+                    });
+                } else {
+                    this.setState({
+                        result: "오답입니다!",
+                        answer: ''
+                    });
+                }
+            }
+
+            onChange = (e)=> {
+                this.setState({answer: e.target.value });
+            }
+
+            render() {
+                return(
+                    <React.Fragment>
+                        <div class="wrap">
+                            <div class="multiplication">
+                                <div class="number question">{this.state.firstNum}</div>
+                                <span class="question"> X </span>
+                                <div class="number question">{this.state.secondNum}</div>
+                                
+                            </div>
+                            <form onSubmit={this.onSubmit}>
+                                <input type="text" value={this.state.answer} onChange={this.onChange}/>
+                                <button type="submit">입력</button>
+                            </form>
+                            <div class="message">{this.state.result}</div>
+                        </div>
+                    </React.Fragment>
+                );
+            }
+
+        }
+             
+    </script>
+
+    <script type="text/babel">
+        ReactDOM.render(<MultiplicationTable/>, document.querySelector('#root'));
+    </script>
+
+
+
+</body>
+</html>
