@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+    <div class="board">
+        <div class="value">
+            <div id="first" class="var"></div>
+            <div id="second" class="var"></div>
+            <div id="third" class="var"></div>
+        </div>
+
+        <!-- keypad -->
+        <table class="keypad">
+            <tr>
+                <td><input class="numBtn" type="button" value="1" onclick="one()"></td>
+                <td><input class="numBtn" type="button" value="2" onclick="two()"></td>
+                <td><input class="numBtn" type="button" value="3" onclick="three()"></td>
+            </tr>
+            <tr>
+                <td><input class="numBtn" type="button" value="4" onclick="four()"></td>
+                <td><input class="numBtn" type="button" value="5" onclick="five()"></td>
+                <td><input class="numBtn" type="button" value="6" onclick="six()"></td>
+            </tr>
+            <tr>
+                <td><input class="numBtn" type="button" value="7" onclick="seven()"></td>
+                <td><input class="numBtn" type="button" value="8" onclick="eight()"></td>
+                <td><input class="numBtn" type="button" value="9" onclick="nine()"></td>
+            </tr>         
+        </table>
+
+        <!-- game button -->
+        <table>
+            <tr>
+                <td><input class="gameBtn" type="button" value="START" onclick="getRandom()"></td>
+                <td><input class="gameBtn" type="button" value="RESET" onclick="remove()"></td>
+                <td><input class="gameBtn" type="button" value="PLAY" onclick="play()"></td>
+            </tr>
+        </table>
+
+        <!-- Strike & Ball -->
+        <div class="strike_ball">
+            <div class="strike">
+                <span id="strike_cnt">0</span>
+                <span>Strike</span>
+            </div>
+            <div class="ball">
+                <span id="ball_cnt">0</span>
+                <span>Ball</span>
+            </div>
+        </div>
+
+        <!-- game start! -->
+        <div id="gameStart">START 버튼을 누르세요</div>
+
+    </div>
+
+</body>
+</html>

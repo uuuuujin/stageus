@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta name="author" content="yujin">
+    <meta name="description" content="YouTube Homepage">
+    
+    <link rel="icon" href="./image/favicon_32.png">
+    <script src="https://kit.fontawesome.com/46239034b8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+
+</head>
+<body>
+    <!-- ICON - HEADER
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-search"></i>
+    <i class="fas fa-microphone"></i>
+    <i class="fas fa-video"></i>
+    <i class="fas fa-ellipsis-h"></i>
+    <i class="fas fa-bell"></i> 
+    <i class="fas fa-th"></i>  -->
+
+    <!-- ICON - CONTAINER
+    <i class="fas fa-home"></i>
+    <i class="fas fa-fire"></i>
+    <i class="fas fa-layer-group"></i>
+    <i class="fas fa-clone"></i> 
+
+    <i class="fas fa-ellipsis-v"></i>-->
+
+    <!-- ICON - NAVIGATION 
+    <i class="fas fa-history"></i>
+    <i class="far fa-file-video"></i>
+    <i class="fas fa-clock"></i>
+    <i class="fas fa-thumbs-up"></i>-->
+
+    <!-- ICON - CONTENT
+    <i class="fas fa-clock"></i>
+    <i class="fas fa-stream"></i>-->
+    
+
+    <!-- HEADER -->
+    <header>
+        <div class="inner" >
+            <div class="menu-left">
+
+                <div class="top-bar" >
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <div class="top-logo">
+                    <a href="https://www.youtube.com/"><img src="./image/youtube_image.png" alt="유튜브_로고"></a>
+                    <span>KR</span>
+                </div>
+            </div>
+
+            <div class="menu-center">
+                <form class="search-form" method="POST"> 
+                    <div class="keyboard_wrap">
+                        <input type="text" class="input--text" placeholder="검색">
+                        <div class="keyboard_image_wrap"> 
+                            <a class="keyboard img_before" href="#">
+                                <img class="before" src="./image/keyboard_image.png" alt="자판"></a>
+                            <a class="keyboard img_after" href="#">
+                                <img class="after" src="./image/keyboard_black.gif" alt="hover시 변경"></a>
+                        </div>
+                    </div>
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+                <a class="voice_search" href="#"><i class="fas fa-microphone"></i></a>
+            </div>            
+            
+            <div class="menu-right">
+                <a class = "sub-menu make-hover" href="#"><i class="fas fa-video"></i></a>
+                <div class="make">만들기</div>
+                <a class = "sub-menu youtube-app-hover" href="#"><i class="fas fa-th"></i></a>
+                <div class="youtube-app">YouTube 앱</div>
+                <a class = "sub-menu notice-hover" href="#"><i class="fas fa-bell"></i></a>
+                <div class="notice">알림</div>
+                <a id="profile" href="#"><div class="profile_div"><img class="profile_img" src="./image/profile.jpg" alt="프로필이미지"></div></a>
+            </div>
+        </div>
+        
+
+    </header>
+
+    <!-- CONTAINER -->
+
+    <!-- navigation-bar -->
+    <div class="navigation"> 
+        <div class="naviList">
+            <a class="naviItem navi-home" href="#">
+                <div class="icon_wrap"><i class="fas fa-home"></i></div>
+                <span>홈</span>
+            </a>
+            <a class="naviItem navi-popular" href="#">
+                <div class="icon_wrap"><i class="fas fa-fire"></i></div>
+                <span>인기</span>
+            </a>
+            <a class="naviItem navi-subcribe" href="#">
+                <div class="icon_wrap"><i class="fas fa-layer-group"></i></div>
+                <span>구독</span>
+            </a>
+
+            <div class="collapsible_section">
+                <a class="naviItem" href="#">
+                    <div class="icon_wrap"><i class="fas fa-clone"></i></div>
+                    <span>보관함</span>
+                </a>
+                <a class="naviItem" href="#">
+                    <div class="icon_wrap"><i class="fas fa-history"></i></div>
+                    <span>시청기록</span>
+                </a>
+                <a class="naviItem" href="#">
+                    <div class="icon_wrap"><i class="far fa-file-video"></i></div>
+                    <span>내 동영상</span>
+                </a>
+                <a class="naviItem" href="#">
+                    <div class="icon_wrap"><i class="fas fa-clock"></i></div>
+                    <span>나중에 볼 동영상</span>
+                </a>
+                <a class="naviItem" href="#">
+                    <div class="icon_wrap"><i class="fas fa-thumbs-up"></i></div>
+                    <span>좋아요 표시한 동영상</span>
+                </a>
+
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container">
+
+        <!-- aside -->
+        <div class="aside">
+            <a class="aside-list aside-home" href="#">
+                <i class="fas fa-home"></i>
+                <span>홈</span>
+            </a>
+
+            <a class="aside-list aside-popular" href="#">
+                <i class="fas fa-fire"></i>
+                <span>인기</span>
+            </a>
+
+            <a class="aside-list aside-subcribe" href="#">
+                <i class="fas fa-layer-group"></i>
+                <span>구독</span>
+            </a>
+
+            <a class="aside-list aside-storage" href="#">
+                <i class="fas fa-clone"></i>
+                <span>보관함</span>
+            </a>
+        </div>
+    
+        <!-- content -->
+        <div class="content">
+            <div class="video">
+                <a class="thumnail" href="#">
+                    <img src="./image/thumnail.jpg" alt="썸네일">
+                    <div class="video_time"><span>20:01</span></div>
+                    <div class="toggle watch_later"><i class="fas fa-clock"></i></div>
+                    <div class="toggle add_list"><i class="fas fa-stream"></i></div>
+                </a>
+                <div class="first_line"> 
+                    <a class="channel_profile" href="#"><img src="./image/channel_profile.jpg" alt="채널프로필"></a>
+                    <a class="video_title" href="#"><p>[#하이라이트#] 얘들아 너네 썸타니..? 큰 자기 광대 승천♥ 레전드 초딩 트리오 모음!#유퀴즈온더블럭 | YOU QUIZ ON THE BLOCK EP.46</p></a>
+                    <a class="detailed_menu" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div> 
+                <div class="second_line">
+                    <div><a class="channel_name" href="#">유 퀴즈 온 더 튜브</a></div>
+                    <div class="meta_data">
+                        <span>조회수 1.4만회</span>
+                        <span>ㆍ</span>
+                        <span>14시간 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <a class="thumnail" href="#">
+                    <img src="./image/thumnail.jpg" alt="썸네일">
+                    <div class="video_time"><span>20:01</span></div>
+                    <div class="toggle watch_later"><i class="fas fa-clock"></i></div>
+                    <div class="toggle add_list"><i class="fas fa-stream"></i></div>
+                </a>
+                <div class="first_line"> 
+                    <a class="channel_profile" href="#"><img src="./image/channel_profile.jpg" alt="채널프로필"></a>
+                    <a class="video_title" href="#"><p>[#하이라이트#] 얘들아 너네 썸타니..? 큰 자기 광대 승천♥ 레전드 초딩 트리오 모음!#유퀴즈온더블럭 | YOU QUIZ ON THE BLOCK EP.46</p></a>
+                    <a class="detailed_menu" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div> 
+                <div class="second_line">
+                    <div><a class="channel_name" href="#">유 퀴즈 온 더 튜브</a></div>
+                    <div class="meta_data">
+                        <span>조회수 1.4만회</span>
+                        <span>ㆍ</span>
+                        <span>14시간 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <a class="thumnail" href="#">
+                    <img src="./image/thumnail.jpg" alt="썸네일">
+                    <div class="video_time"><span>20:01</span></div>
+                    <div class="toggle watch_later"><i class="fas fa-clock"></i></div>
+                    <div class="toggle add_list"><i class="fas fa-stream"></i></div>
+                </a>
+                <div class="first_line"> 
+                    <a class="channel_profile" href="#"><img src="./image/channel_profile.jpg" alt="채널프로필"></a>
+                    <a class="video_title" href="#"><p>[#하이라이트#] 얘들아 너네 썸타니..? 큰 자기 광대 승천♥ 레전드 초딩 트리오 모음!#유퀴즈온더블럭 | YOU QUIZ ON THE BLOCK EP.46</p></a>
+                    <a class="detailed_menu" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div> 
+                <div class="second_line">
+                    <div><a class="channel_name" href="#">유 퀴즈 온 더 튜브</a></div>
+                    <div class="meta_data">
+                        <span>조회수 1.4만회</span>
+                        <span>ㆍ</span>
+                        <span>14시간 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <a class="thumnail" href="#">
+                    <img src="./image/thumnail.jpg" alt="썸네일">
+                    <div class="video_time"><span>20:01</span></div>
+                    <div class="toggle watch_later"><i class="fas fa-clock"></i></div>
+                    <div class="toggle add_list"><i class="fas fa-stream"></i></div>
+                </a>
+                <div class="first_line"> 
+                    <a class="channel_profile" href="#"><img src="./image/channel_profile.jpg" alt="채널프로필"></a>
+                    <a class="video_title" href="#"><p>[#하이라이트#] 얘들아 너네 썸타니..? 큰 자기 광대 승천♥ 레전드 초딩 트리오 모음!#유퀴즈온더블럭 | YOU QUIZ ON THE BLOCK EP.46</p></a>
+                    <a class="detailed_menu" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div> 
+                <div class="second_line">
+                    <div><a class="channel_name" href="#">유 퀴즈 온 더 튜브</a></div>
+                    <div class="meta_data">
+                        <span>조회수 1.4만회</span>
+                        <span>ㆍ</span>
+                        <span>14시간 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <a class="thumnail" href="#">
+                    <img src="./image/thumnail.jpg" alt="썸네일">
+                    <div class="video_time"><span>20:01</span></div>
+                    <div class="toggle watch_later"><i class="fas fa-clock"></i></div>
+                    <div class="toggle add_list"><i class="fas fa-stream"></i></div>
+                </a>
+                <div class="first_line"> 
+                    <a class="channel_profile" href="#"><img src="./image/channel_profile.jpg" alt="채널프로필"></a>
+                    <a class="video_title" href="#"><p>[#하이라이트#] 얘들아 너네 썸타니..? 큰 자기 광대 승천♥ 레전드 초딩 트리오 모음!#유퀴즈온더블럭 | YOU QUIZ ON THE BLOCK EP.46</p></a>
+                    <a class="detailed_menu" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div> 
+                <div class="second_line">
+                    <div><a class="channel_name" href="#">유 퀴즈 온 더 튜브</a></div>
+                    <div class="meta_data">
+                        <span>조회수 1.4만회</span>
+                        <span>ㆍ</span>
+                        <span>14시간 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <a class="thumnail" href="#">
+                    <img src="./image/thumnail.jpg" alt="썸네일">
+                    <div class="video_time"><span>20:01</span></div>
+                    <div class="toggle watch_later"><i class="fas fa-clock"></i></div>
+                    <div class="toggle add_list"><i class="fas fa-stream"></i></div>
+                </a>
+                <div class="first_line"> 
+                    <a class="channel_profile" href="#"><img src="./image/channel_profile.jpg" alt="채널프로필"></a>
+                    <a class="video_title" href="#"><p>[#하이라이트#] 얘들아 너네 썸타니..? 큰 자기 광대 승천♥ 레전드 초딩 트리오 모음!#유퀴즈온더블럭 | YOU QUIZ ON THE BLOCK EP.46</p></a>
+                    <a class="detailed_menu" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div> 
+                <div class="second_line">
+                    <div><a class="channel_name" href="#">유 퀴즈 온 더 튜브</a></div>
+                    <div class="meta_data">
+                        <span>조회수 1.4만회</span>
+                        <span>ㆍ</span>
+                        <span>14시간 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <a class="thumnail" href="#">
+                    <img src="./image/thumnail.jpg" alt="썸네일">
+                    <div class="video_time"><span>20:01</span></div>
+                    <div class="toggle watch_later"><i class="fas fa-clock"></i></div>
+                    <div class="toggle add_list"><i class="fas fa-stream"></i></div>
+                </a>
+                <div class="first_line"> 
+                    <a class="channel_profile" href="#"><img src="./image/channel_profile.jpg" alt="채널프로필"></a>
+                    <a class="video_title" href="#"><p>[#하이라이트#] 얘들아 너네 썸타니..? 큰 자기 광대 승천♥ 레전드 초딩 트리오 모음!#유퀴즈온더블럭 | YOU QUIZ ON THE BLOCK EP.46</p></a>
+                    <a class="detailed_menu" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div> 
+                <div class="second_line">
+                    <div><a class="channel_name" href="#">유 퀴즈 온 더 튜브</a></div>
+                    <div class="meta_data">
+                        <span>조회수 1.4만회</span>
+                        <span>ㆍ</span>
+                        <span>14시간 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <a class="thumnail" href="#">
+                    <img src="./image/thumnail.jpg" alt="썸네일">
+                    <div class="video_time"><span>20:01</span></div>
+                    <div class="toggle watch_later"><i class="fas fa-clock"></i></div>
+                    <div class="toggle add_list"><i class="fas fa-stream"></i></div>
+                </a>
+                <div class="first_line"> 
+                    <a class="channel_profile" href="#"><img src="./image/channel_profile.jpg" alt="채널프로필"></a>
+                    <a class="video_title" href="#"><p>[#하이라이트#] 얘들아 너네 썸타니..? 큰 자기 광대 승천♥ 레전드 초딩 트리오 모음!#유퀴즈온더블럭 | YOU QUIZ ON THE BLOCK EP.46</p></a>
+                    <a class="detailed_menu" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div> 
+                <div class="second_line">
+                    <div><a class="channel_name" href="#">유 퀴즈 온 더 튜브</a></div>
+                    <div class="meta_data">
+                        <span>조회수 1.4만회</span>
+                        <span>ㆍ</span>
+                        <span>14시간 전</span>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    
+
+    
+</body>
+</html>

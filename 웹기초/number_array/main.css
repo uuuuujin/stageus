@@ -1,0 +1,120 @@
+.box_wrap { 
+    width: 1000px;
+    height: 680px;
+    background: lightblue;
+    position: absolute;
+    left: 50%;
+    transform:translate(-50%,0);
+}
+
+/* 게임 설명 */
+.description {
+    font-size: 20px;
+    text-align: center;
+    margin: 30px;
+    font-weight: bold;
+}
+
+/* 게임시작 버튼 */
+.gameStart{
+    text-align: center;
+    margin: 40px;
+}
+
+.gameStart input{
+    width: 120px;
+    height: 60px;
+    border: none;
+    background-color: #f8585b;
+    font-size: 18px;
+}
+
+input:active {
+    outline: none;
+    background: #cccccc;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* 드래그 가능하며 랜덤으로 생성되는 숫자 0~9 */
+.dragBox {
+    /* background: lightpink; */
+    margin: 20px auto;
+    border-spacing: 5px;
+    text-align: center;
+}
+
+.num {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background: white;
+    text-align:center; 
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+/* 0~9까지 숫자를 나열할 곳 */
+.dropBox {
+    /* background: lightpink; */
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 10px;
+    text-align: center;
+}
+
+.box {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background: white;
+    text-align:center; 
+    font-size: 24px;
+}
+
+/* reset & check button */
+.btn {
+    display: flex;
+    /* padding-left: 335px ; */
+    text-align: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+/* reset누르면 drop해놓았던 숫자들 사라짐 */
+.btn div {
+    margin: 20px;
+}
+
+.btn input{
+    width: 110px;
+    height: 50px;
+    border: none;
+    background-color: #f8585b;
+    font-size: 18px;
+}
+
+input:active {
+    outline: none;
+    background: #cccccc;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* 0~9까지 숫자가 나열되면 뜨는 문장과 걸린시간 */
+#gameEnd {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+    font-weight: bold;
+    display: none;
+}
+
+#color {
+    background-color: #e6e6e6 ;
+
+}

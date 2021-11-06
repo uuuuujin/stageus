@@ -1,0 +1,637 @@
+a {
+    text-decoration: none
+}
+
+/* HEADER */
+
+/* HEADER LEFT */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+header .inner {
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+    background: white;
+    box-sizing: border-box;
+    
+}
+
+
+header .menu-left{
+    display: flex;
+    align-items: center;
+    width: 185px;
+    height: 40px;
+}
+
+.top-bar {
+    margin: 0 16px 0 0;
+    padding: 8px;
+}
+.top-bar i{
+    color: #606060;
+    font-size: 20px;
+}
+
+.top-logo {
+    width: 129px;
+    height: 24px;
+    display: flex;
+}
+
+.top-logo a img {
+    width: 90px;
+    height: 20px;
+    margin: 3px 0 0 0;
+}
+
+.top-logo span {
+    font-family: 'Roboto', sans-serif;
+    color: #606060;
+    margin: 0 0 0 2px;
+    font-size: 10px;
+}
+
+
+/* HEADER CENTER */
+header .menu-center {
+    align-items: center;
+    display: flex;
+    width: 50%;
+}
+
+header .search-form {
+    /* width: 500px; */
+    /* width: 100%; */
+    height: 28px;
+    margin: 0 0 0 40px;
+    padding: 0 4px;
+    align-items: center;
+    display: flex;
+    outline: none;
+    position: relative;
+    width: 90%;
+}
+
+/* INPUT */
+.keyboard_wrap {
+    padding: 2px 6px;
+    display: flex;
+    width: 90%;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    border: 1px solid #d3d3d3;
+    border-radius : 2px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+    outline: none;
+}
+
+@media screen and (max-width:656px) {
+    .keyboard_wrap,
+    button {
+        display: none;
+    }
+}
+
+.input--text {
+    width: 95%;
+    height: 24px;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+    display: flex;
+}
+.input--text:focus + .keyboard_wrap {
+    border: 1px solid #0000b3;
+    box-shadow: inset 0px 2px 2px rgba(0,0,0,0.075);
+}
+.keyboard_image_wrap {
+    width: 31px;
+    height: 24px;
+    padding: 0 2px;
+    box-sizing: border-box;
+    line-height: 24px;
+    display: flex;
+
+}
+
+.keyboard {
+    padding: 0 4px;
+    box-sizing: border-box;
+    width: 27px;
+    height: 24px;
+    align-items: center;
+}
+
+.keyboard img {
+    width: 19px;
+    height: 11px;
+    align-items: center;
+}
+
+.img_after {
+    display: none;
+}
+
+.img_before:hover {
+    display: none;
+}
+
+.img_before:hover + .img_after {
+    display: block;
+}
+
+header button {
+    width: 60px;
+    height: 30px;
+    padding: 1px 6px;
+    border: 1px solid #d3d3d3;
+    border-radius: 2px;
+    background-color: #f8f8f8;
+    outline: none;
+    cursor: pointer;  
+    
+}
+header button i {
+    font-size: 14.5px;
+    color: #9a9a9a;
+    align-items: center;
+}
+
+header button:hover {
+    background-color: #f0f0f0;
+    border: 1px solid #c6c6c6;
+}
+
+header button:hover > i {
+    color: #333;
+}
+
+header .voice_search{
+    padding: 8px;
+}
+
+header .voice_search i {
+    color: #606060;
+    font-size: 20px;
+    padding: 0 4px;
+}
+
+
+/* HEADER right */
+header .menu-right {
+    display: flex;
+    align-items: center;
+    /* position: absolute;
+    right: 0; */
+}
+
+header .sub-menu {
+    padding: 8px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+header .sub-menu i {
+    color: #606060;
+    font-size: 20px;
+    display: flex;
+}
+
+
+.make-hover:hover + .make {
+    display: block;
+}
+.youtube-app-hover:hover + .youtube-app {
+    display: block;
+}
+
+.notice-hover:hover + .notice {
+    display: block;
+}
+
+
+
+#profile {
+    padding: 1px 6px;
+}
+
+header .profile_img {
+    width: 31.99px;
+    height: 31.99px;
+    border-radius: 50%; 
+}
+
+.profile_div {
+    width: 32px;
+    height: 32px;
+    margin: 4px 14px;
+
+}
+
+.make {
+    display: none;
+    width: 55px;
+    height: 33.78;
+    padding: 8px;
+    margin: 8px;
+    box-sizing: border-box;
+    background-color: #616161;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+    z-index: 1;
+    border-radius: 2px;
+    position: absolute;
+    left: 1150px;
+    top: 55px;
+    transition: width 1s;
+}
+
+.youtube-app {
+    display: none;
+    width: 88px;
+    height: 33.78;
+    padding: 8px;
+    margin: 8px;
+    box-sizing: border-box;
+    background-color: #616161;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+    z-index: 1;
+    border-radius: 2px;
+    position: absolute;
+    left: 1190px;
+    top: 55px;
+}
+
+.notice {
+    display: none;
+    width: 42px;
+    height: 33.78;
+    padding: 8px;
+    margin: 8px;
+    box-sizing: border-box;
+    background-color: #616161;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+    z-index: 1;
+    border-radius: 2px;
+    position: absolute;
+    left: 1258px;
+    top: 55px;
+}
+
+/* NAVIGATION */
+.navigation {
+    display: none;
+    float: left;
+    width: 240px;
+    height: 1000px;
+    
+}
+
+.naviHeader {
+    width: 240px;
+    height: 57px;
+    padding: 0 0 0 16px;
+    /* background: pink; */
+    margin-top: 57px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.naviList {
+    padding: 14px 0;
+    height: 400px;
+    /* background: skyblue; */
+}
+
+.naviItem {
+    width: 240px;
+    height: 40px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    display: block;
+    display: flex;
+    align-items: center;
+}
+
+.naviList a:hover {
+    background-color: rgba(0,0,0,0.075);
+}
+
+
+.naviItem span {
+    font-size: 14px;
+    color: #030303;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icon_wrap {
+    width: 24px;
+    height: 24px;
+    margin: 0 24px 0 0;
+    text-align: center;
+    line-height: 24px;
+}
+
+.icon_wrap i{
+    font-size: 18px;
+    color: #606060;
+}
+
+.collapsible_section {
+    margin: 12px 0 0 ;
+    padding: 12px  0;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.navigation.active {
+    display: flex;
+    position: fixed;
+    left: 0;
+    background-color: white;
+    transition: all 1s ease 0.5s;
+}
+
+.navi-home:focus div i {
+    color: red;
+}
+
+
+/* CONTAINER */
+/* ASIDE */
+.container {
+    width: 100%;
+    height: 1000px;
+    /* display: flex; */
+    margin-top: 56px;
+}
+
+.aside {
+    width: 72px;
+    height: 1000px;
+    position: fixed;
+    left: 0;
+    background-color: white;
+}
+
+.aside.active {
+    display: none;
+}
+
+.container .aside-list {
+    width: 72px;
+    height: 73.72px;
+    padding: 16px 0 14px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.container .aside a:hover {
+    background-color: rgba(0,0,0,0.075);
+}
+
+.container .aside-list i {
+    font-size: 20px;
+    color: #606060;
+    margin: 0 0 6px;
+}
+.container .aside span{
+    font-size: 10px;
+    color: #606060;
+}
+
+/* side메뉴 클릭하면 아이콘&글자 색 빨간색으로 변경 */
+.aside-home:focus i{
+    color: red;    
+} 
+
+.aside-home:focus span{
+    color: red;
+}
+
+.aside-popular:focus i{
+    color: red;    
+} 
+
+.aside-popular:focus span{
+    color: red;
+}
+
+.aside-subcribe:focus i{
+    color: red;    
+} 
+
+.aside-subcribe:focus span{
+    color: red;
+}
+
+.aside-storage:focus i{
+    color: red;    
+} 
+
+.aside-storage:focus span{
+    color: red;
+}
+
+
+/* CONTENT */
+.content.active {
+    padding: 20px 0 0 260px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    /* float: left; */
+    background-color: #f6f6f6; 
+    padding: 20px 0 0 92px;
+    
+}
+
+.video {
+    width: 277.58px;
+    height: 267.45px;
+    margin: 0 8px 40px;
+    position: relative;
+}
+
+.video:hover .fa-ellipsis-v{
+    display: block;
+}
+
+.video:hover .toggle {
+    display: table;
+}
+
+.video:hover .toggle i {
+    display: table-cell;
+}
+
+.thumnail {
+    position: relative;
+    display: inline-block;
+    width: 277.58;
+    height: 155.75px;
+    text-align: center;
+}
+
+.thumnail img{
+    width: 277.58;
+    height: 155.75px;
+}
+
+.video_time {
+    display: table;
+    margin: 4px;
+    padding: 3px 4px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 2px;
+    background-color: #000000CC;
+    z-index: 5;
+    letter-spacing: 0.5px;
+    height: 12px;
+    
+}
+
+.video_time span {
+    display: table-cell;
+    vertical-align: middle;
+    height: 12px;
+    line-height: 12px;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.watch_later {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #000000CC;
+    height: 24px;
+    width: 24px;
+    margin: 4px;
+    z-index: 5;
+    border-radius: 2px;
+}
+
+.watch_later i {
+    display: none;
+    vertical-align: middle;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.add_list {
+    display: none;
+    position: absolute;
+    top: 28px;
+    right: 0;
+    background-color: #000000CC;
+    height: 24px;
+    width: 24px;
+    margin: 4px;
+    z-index: 5;
+    border-radius: 2px;
+}
+.add_list i {
+    display: none;
+    vertical-align: middle;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+.channel_profile {
+    margin: 12px 12px 0 0;
+}
+
+.channel_profile img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.first_line {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.video_title {
+   color: #606060;
+}
+
+
+p {
+    font-family: 'Roboto', sans-serif;
+    width: 205.6px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 12px 0 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+
+.detailed_menu {
+    margin: 0 auto;
+}
+
+.detailed_menu i{
+    width: 4px;
+    height: 16;
+    color: #606060;
+    display: none;
+}
+
+.second_line {
+    width: 205.6px;
+    margin: 10px 0 0 0;
+    padding: 0 24px 0 0;
+    position: absolute;
+    left: 48px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #606060;
+}
+
+.channel_name {
+    color: #606060;
+}
+
+.meta_data {
+    margin: 5px 0 0 0;
+}

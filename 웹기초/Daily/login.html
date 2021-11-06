@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <script type="text/javascript" src="logincheck.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Marck+Script&family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <title>Daily</title>
+</head>
+<body>
+    <div class="login">
+        <div class="wrap">
+            <div class="logo">Daily</div>
+            <form action="loginDB.jsp" method="POST" name="loginform" onsubmit="return logincheck()">
+                <input class="id" type="text" name="id" placeholder="아이디">
+                <input class="password" type="password" name="password" placeholder="비밀번호">
+                <button type="submit">로그인</button>
+            </form>
+            <a href="signuppage.html" class="signup">signup</a>
+        </div> 
+    </div>
+</body>
+</html>

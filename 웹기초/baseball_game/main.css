@@ -1,0 +1,108 @@
+/* input number */
+.board {
+    width: 450px;
+    height: 630px;
+    background: pink;
+    position: absolute;
+    left: 50%;
+    transform:translate(-50%,0);
+    margin-top: 30px;
+}
+
+.value {
+    width: auto;
+    height: auto;
+    margin: 30px 0 0 40px;
+    display: flex;
+    /* background: red; */
+
+}
+
+.var {
+    margin: 0 5px 0 0; 
+    width: 120px;
+    height: 70px;
+    text-align: center;
+    border: none;  
+    background: white;
+    font-size: 50px;
+}
+
+.var:focus {
+    outline: none;
+}
+
+
+/* keypad */
+table {
+    margin: 25px auto;
+}
+
+.numBtn {
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+    color: white;
+    background: #999999;
+    border-radius: 10%;
+    border: none;
+}
+
+.numBtn:active {
+    outline: none;
+    background: #cccccc;
+}
+
+.numBtn:focus{
+    outline: none;
+}
+
+.gameBtn {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.gameBtn:active {
+    outline: none;
+    background: #cccccc;
+}
+
+.gameBtn:focus{
+    outline: none;
+}
+
+
+/* Strike & Ball */
+.strike_ball {
+    display: flex;
+    margin: 0 0 0 90px;
+}
+
+.strike_ball div {
+    margin: 0 40px 0 20px;
+    display: flex;
+}
+
+.strike_ball span {
+    font-size: 30px;
+}
+
+.strike span {
+    color: red;
+}
+
+.ball span {
+    color: #008000;
+}
+
+ /* game start! */
+ #gameStart {
+     font-size: 25px;
+     /* margin: 20px 0 0 100px; */
+     margin: 30px 0;
+     text-align: center;
+     font-weight: bold;
+ }

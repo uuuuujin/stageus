@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <script type="text/javascript" src="inputcheck.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Marck+Script&family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <title>Daily</title>
+</head>
+<body>
+    <div class="signup">
+        <div class="wrap">
+            <a class="logo" href="login.html">Daily</a>
+            <div class="signup_form">
+                <div class="title">회원정보 입력</div>
+                <form action="signup.jsp" id="signupform" method="POST" name="signupform" onsubmit="return inputcheck()">
+                    <table>
+                        <tr>
+                            <td class="first">
+                                
+                                <input type="text"  id="id" name="id" placeholder="아이디" required>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input id="password" type="password" name="password" placeholder="비밀번호" required></td>
+                        </tr>
+                        <tr>
+                            <td class="password_check_row">
+                                <input id="password_check" name="password_check" type="password" placeholder="비밀번호 확인" required>
+                                <span id="message"></span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="name" name="name" placeholder="이름" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="phone" name="phone" placeholder="연락처 (숫자만 입력하세요)" maxlength="11" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="school" name="school" placeholder="학교" required></td>
+                        </tr>
+                    </table>
+                    <button class="join" type="submit">가입하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

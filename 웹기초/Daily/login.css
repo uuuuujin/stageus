@@ -1,0 +1,87 @@
+body {
+    font-family: '나눔 고딕','Nanum Gothic', Dotum, '돋움',sans-serif;
+}
+
+html, body, .login {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    display: block;
+}
+.login {
+    background-color: #595959;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 350px;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    font-size: 80px;
+    padding: 80px 0 40px 0;
+    /* font-family: 'Lobster', cursive;
+    font-family: 'Marck Script', cursive; */
+    font-family: 'Yellowtail', cursive;
+    text-align: center;
+}
+
+input {
+    display: block;
+    outline: none;
+    width: 290px;
+    height: 40px; 
+    margin: 0 auto;
+    padding: 1px 10px;
+    font-size: 16px;
+}
+
+.id, .password {
+    border: 0;
+}
+
+.id {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 0.5px solid #595959;
+}
+
+.password {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+button {
+    width: 310px;
+    height: 40px;
+    padding: 0;
+    margin: 20px 0;
+    outline: none;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #999999;
+    font-size: 16px;
+    color: white;
+}
+
+.signup {
+    position: absolute;
+    right: 27px;
+    top: 385x;
+    color: #999999;
+}
+
+.signup:active {
+    color: #999999;
+}
