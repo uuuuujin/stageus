@@ -26,7 +26,7 @@
 
 3. 메인 페이지
 
-<img src="./image/mainpage.PNG" width="600">
+<img src="./image/mainpage.png" width="600">
 
 <br>
 <br>
